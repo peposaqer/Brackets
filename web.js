@@ -1,4 +1,3 @@
-// ES6 Class
 class TypeWriter {
     constructor(txtElement, words, wait = 3000) {
       this.txtElement = txtElement;
@@ -87,3 +86,75 @@ $(document).ready(function(){
     }
   });
 });
+
+let nums = document.querySelectorAll(".num");
+let section = document.querySelector(".us");
+let started = false; // Function Started ? No
+
+window.onscroll = function () {
+  if (window.scrollY >= section.offsetTop) {
+    if (!started) {
+      nums.forEach((num) => startCount(num));
+    }
+    started = true;
+  }
+};
+
+function startCount(el) {
+  let goal = el.dataset.goal;
+  let count = setInterval(() => {
+    el.textContent++;
+    if (el.textContent == goal) {
+      clearInterval(count);
+    }
+  }, 2000 / goal);
+}
+
+jQuery(document).ready(function ($) {
+  $('.hero').slick({
+  dots: true,
+      infinite: true,
+      speed: 500,
+      fade: !0,
+      cssEase: 'linear',
+  slidesToShow: 1,
+  slidesToScroll: 1,
+      autoplay: true,
+  autoplaySpeed: 8000,
+      draggable: false,
+  arrows: false,
+  responsive: [
+    {
+  breakpoint: 1024,
+  settings: {
+  slidesToShow: 1,
+  slidesToScroll: 1,
+      infinite: true
+            }
+      },
+      {
+  breakpoint: 768,
+  settings: {
+      draggable: true,
+            }
+  },
+  {
+  breakpoint: 600,
+  settings: {
+      slidesToShow: 1,
+      draggable: true,
+  slidesToScroll: 1
+          }
+  },
+  {
+  breakpoint: 480,
+  settings: {
+      slidesToShow: 1,
+      draggable: true,
+  slidesToScroll: 1
+            }
+  }
+
+    ]
+  });
+});		
