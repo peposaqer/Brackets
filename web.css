@@ -713,6 +713,11 @@ header {
     color: #C47CC4 !important;
 }
 
+.us img {
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
 .contact-us {
     text-align: center;
 }
@@ -1003,7 +1008,7 @@ textarea{
 }
 
 .dropdown-menu {
-    display: block;
+    /* display: block; */
     padding: 1rem;
     border: none;
     border-radius: 12px;
@@ -1079,6 +1084,14 @@ textarea{
         width: 180px;
         height: 180px;
         border-radius: 50%;
+    }
+
+    #title h1 {
+        font-size: 65px;
+    }
+
+    #title h1 span {
+        font-size: 25px !important;
     }
 
     .choose-img {
